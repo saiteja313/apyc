@@ -1,6 +1,7 @@
 from prometheus_client import Gauge, start_http_server
 import requests
-import sys
+import time
+
 URL_RESPONSE = Gauge('sample_external_url_response_ms', 'Description of summary', ['url'])
 URL_UP = Gauge('sample_external_url_up', 'Description of gauge', ['url'])
 
@@ -27,3 +28,4 @@ if __name__ == '__main__':
         for each_url in LIST_URL:
             response_code = crawl_url(each_url)
             print("Response code for " + str(each_url) + " : " + str(response_code))
+            time.sleep(1)
