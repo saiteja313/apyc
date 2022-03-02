@@ -124,18 +124,19 @@ make unit-test
 
 - APyC Grafana Dashboard
 
-![APyC Grafana Dashboard](/apyc/screenshots/apyc-grafana-dashboard.png)
+    ![APyC Grafana Dashboard](screenshots/apyc-grafana-dashboard.png)
 
 - APyC Prometheus metric `sample_external_url_response_ms`
-![APyC Prometheus metric sample_external_url_response_ms](screenshots/apyc-prometheus-sample_external_url_response_ms.png)
+
+    ![APyC Prometheus metric sample_external_url_response_ms](screenshots/apyc-prometheus-sample_external_url_response_ms.png)
 
 - APyC Prometheus metric `sample_external_url_up`
 
-![APyC Prometheus metric sample_external_url_up](screenshots/apyc-prometheus-sample_external_url_up.png)
+    ![APyC Prometheus metric sample_external_url_up](screenshots/apyc-prometheus-sample_external_url_up.png)
 
 - APyC as Prometheus Target
 
-![APyC as Prometheus Target](screenshots/apyc-prometheus-targets.png)
+    ![APyC as Prometheus Target](screenshots/apyc-prometheus-targets.png)
 
 --- 
 
