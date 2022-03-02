@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: apyc
+  name: apyc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apyc
+  template:
+    metadata:
+      labels:
+        app: apyc
+      annotations:
+        prometheus.io/port: '8000'
+        prometheus.io/scrape: 'true'
+    spec:
+      containers:
+      - image: saiteja313/apyc:latest
+        name: apyc
+        ports:
+        - containerPort: 8000
+        resources: {}

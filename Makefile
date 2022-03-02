@@ -5,9 +5,6 @@ VERSION ?= $(shell git describe --tags --always --dirty || echo "unknown")
 IMAGE = saiteja313/apyc
 IMAGE_NAME = $(IMAGE):$(VERSION)
 
-TEST_IMAGE = 
-TEST_IMAGE_NAME =
-
 all: unit-test build-docker push 
 
 run:
@@ -32,7 +29,7 @@ docker-unit-test: docker-build
 	docker run -it --entrypoint "" "$(IMAGE_NAME)" python -m unittest /opt/apyc/tests/test_crawler.py
 
 # tag commit id as latest tag and push to docker hub.
-docker-push: docker-build
+docker-push: docker-unit-test
 	docker tag "$(IMAGE_NAME)" "$(IMAGE)":latest
 	docker push "$(IMAGE_NAME)"
 	docker push "$(IMAGE_NAME)"
@@ -40,6 +37,10 @@ docker-push: docker-build
 	docker push "$(IMAGE)":latest
 	@echo "Push successful for \"$(IMAGE_NAME)\":latest"
 	@echo "push complete for Docker image \"$(IMAGE_NAME)\""
+
+k8s-deploy: docker-push
+	kubectl delete -f apyc-k8s-deployment.yml --ignore-not-found=true
+	kubectl apply -f apyc-k8s-deployment.yml
 
 clean:
 	rm -f tests/__pycache__
