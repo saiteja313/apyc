@@ -122,7 +122,7 @@ make unit-test
 
 ## APyC Prometheus Targets and Graphs
 
-- APyC Grafana Dashboard
+- You can import `APyC Metrics-dashboard.json` dashboard to your Grafana environment and visualize `APyC Grafana Dashboard` as seen in below screenshot.
 
     ![APyC Grafana Dashboard](screenshots/apyc-grafana-dashboard.png)
 
