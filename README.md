@@ -33,11 +33,11 @@ Getting Started
 
 ## prerequisites
 
-- Docker 
+- Docker
 - make
 - Kubernetes Cluster
 - kubectl
-- Helm
+- Helm version 3
 
 ## Run APyC on local machine
 
