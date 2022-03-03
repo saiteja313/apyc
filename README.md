@@ -39,13 +39,13 @@ Getting Started
 - kubectl
 - Helm
 
-## Run APyC on local machine (MacOS)
+## Run APyC on local machine
 
 ```
 make run
 ```
 
-## Run Unitest on local machine (MacOS)
+## Run Unitest on local machine
 
 ```
 make unit-test
@@ -110,6 +110,10 @@ make unit-test
     kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
     ```
 
+- Import APyC specific Grafana Dashboard
+    - click the `+` icon in the side menu and then click Import.
+    - From here you can upload the dashboard JSON file `config/grafana/APyC Metrics-dashboard.json`
+
 - Deploy APyC on Kubernetes
 
     ```
@@ -122,7 +126,7 @@ make unit-test
 
 ## APyC Prometheus Targets and Graphs
 
-- You can import `APyC Metrics-dashboard.json` dashboard to your Grafana environment and visualize `APyC Grafana Dashboard` as seen in below screenshot.
+- `APyC Grafana Dashboard` screenshot below
 
     ![APyC Grafana Dashboard](screenshots/apyc-grafana-dashboard.png)
 
