@@ -5,10 +5,11 @@ VERSION ?= $(shell git describe --tags --always --dirty || echo "unknown")
 IMAGE = saiteja313/apyc
 IMAGE_NAME = $(IMAGE):$(VERSION)
 
-all: unit-test build-docker push 
+all: docker-unit-test
 
 run:
-	@echo "Running src/app.py. \n Tip: You can run app inside a docker container using 'make docker-run' \n"
+	@echo "Running src/app.py. \n Requires Python 3.7.4 or greater. \n Tip: You can run app inside a docker container using 'make docker-run' \n"
+	pip install -r requirements.txt
 	python src/app.py
 
 unit-test:
