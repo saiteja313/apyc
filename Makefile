@@ -38,7 +38,7 @@ docker-push: docker-unit-test
 	@echo "Push successful for \"$(IMAGE_NAME)\":latest"
 	@echo "push complete for Docker image \"$(IMAGE_NAME)\""
 
-k8s-deploy: docker-push
+k8s-deploy:
 	kubectl delete -f apyc-k8s-deployment.yml --ignore-not-found=true
 	kubectl apply -f apyc-k8s-deployment.yml
 
