@@ -38,18 +38,24 @@ Getting Started
 - Kubernetes Cluster
 - kubectl
 - Helm version 3
+- Python 3.7.4 or greater (only if Docker is not installed)
+- Pip (only if Docker is not installed)
 
 ## Run APyC on local machine
 
-```
-make run
-```
+    make docker-run
+
+    # OR use below command if Docker is not installed
+
+    make run
 
 ## Run Unitest on local machine
 
-```
-make unit-test
-```
+    make docker-unit-test
+    
+    # OR use below command if Docker is not installed
+    
+    make unit-test
 
 ## Deploy APyC to Kubernetes Cluster
 
